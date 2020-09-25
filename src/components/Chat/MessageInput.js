@@ -2,8 +2,8 @@ import React from "react";
 
 export const MessageInput = () => {
   return (
-    <div className="input-msg">
-      <div className="input-msg-emoji">
+    <form className="input-msg">
+      <div tabIndex="-1" className="input-msg-emoji">
         <svg
           width="20"
           height="20"
@@ -20,12 +20,12 @@ export const MessageInput = () => {
       <input
         className="input-msg-input"
         type="text"
-        placeholder="write your message here"
+        placeholder="Write your message here"
       />
       <button className="input-msg-btn">
         <svg
-          width="11"
-          height="11"
+          width="13"
+          height="13"
           viewBox="0 0 11 11"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +36,6 @@ export const MessageInput = () => {
           />
         </svg>
       </button>
-    </div>
+    </form>
   );
 };
