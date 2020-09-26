@@ -124,7 +124,10 @@ input:-webkit-autofill {
     }
     &:focus {
       outline: none;
-      border: 2px solid #4d5ad1;
+      background: #fff;
+      & path {
+        fill: #838deb;
+      }
     }
     &:hover path {
       fill: #838deb;
@@ -209,25 +212,30 @@ input:-webkit-autofill {
   }
   &-cloud {
     max-width: 50%;
+    min-width: 15%;
     width: auto;
     min-height: 60px;
-    background: #ffb69f;
+    background: #4e556b;
     border-radius: 5px;
     padding: 5px 10px;
     font-weight: 500;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   &-author {
     font-weight: 500;
+    font-size: 14px;
     color: #ef5c5c;
     margin-bottom: 3px;
   }
   &-content {
-    color: #434957;
     font-weight: 400;
   }
   &-time {
     font-size: 12px;
-    color: #536286;
+    color: #a8a8a8;
     text-align: right;
     margin-top: 3px;
   }

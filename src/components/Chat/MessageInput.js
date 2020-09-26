@@ -1,6 +1,31 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { messages } from "./localMsgs";
+import { InputContext } from "./InputContext";
+import Moment from "react-moment";
 export const MessageInput = () => {
+  const [input, setInput] = useContext(InputContext);
+  const date = new Date();
+
+  function submitHandler(e) {
+    e.preventDefault();
+    if (input !== "") {
+      messages.push({
+        author: "ziyo",
+        authorId: 1,
+        msgId: messages.length + 1,
+        content: input,
+        avatar: null,
+        time: <Moment format="HH:mm">{date}</Moment>,
+        msgOwner: true,
+      });
+    } else return;
+    setInput("");
+  }
+
+  function inputHandler(e) {
+    setInput(e.target.value);
+  }
+
   return (
     <form className="input-msg">
       <div tabIndex="-1" className="input-msg-emoji">
@@ -18,11 +43,13 @@ export const MessageInput = () => {
         </svg>
       </div>
       <input
+        value={input}
+        onChange={inputHandler}
         className="input-msg-input"
         type="text"
         placeholder="Write your message here"
       />
-      <button className="input-msg-btn">
+      <button className="input-msg-btn" onClick={submitHandler}>
         <svg
           width="13"
           height="13"

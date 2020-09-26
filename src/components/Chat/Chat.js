@@ -2,13 +2,16 @@ import React from "react";
 import { TopBar } from "./TopBar";
 import { Messages } from "./Messages";
 import { MessageInput } from "./MessageInput";
+import { InputProvider } from "./InputContext";
 const Chat = () => {
   return (
-    <div className="chat">
-      <TopBar />
-      <Messages />
-      <MessageInput />
-    </div>
+    <InputProvider>
+      <div className="chat">
+        <TopBar />
+        <Messages />
+        <MessageInput />
+      </div>
+    </InputProvider>
   );
 };
 

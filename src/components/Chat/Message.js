@@ -25,8 +25,28 @@ export const Message = (props) => {
       >
         <img src={props.avatar} alt="" />
       </div>
-      <div className="message-cloud">
-        <p className="message-author">{props.author}</p>
+      <div
+        className="message-cloud"
+        style={
+          props.msgOwner
+            ? {
+                background: "#56638b",
+              }
+            : null
+        }
+      >
+        <p
+          className="message-author"
+          style={
+            props.msgOwner
+              ? {
+                  display: "none",
+                }
+              : null
+          }
+        >
+          {props.author}
+        </p>
         <p className="message-content">{props.content}</p>
         <p className="message-time">{props.time}</p>
       </div>
